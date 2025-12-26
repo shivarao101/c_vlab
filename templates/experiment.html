@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Virtual Lab - Experiment {{ exp_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+    <img src="{{ url_for('static', filename='vcet.png') }}" 
+         alt="University Logo" class="logo">
+
+    <div class="header-text">
+        <h1>Vivekananda College of Engineering and Technology</h1>
+        <h2>Department of Electronics & Communication Engineering</h2>
+    </div>
+</div>
+<div class="container">
+<a href="/">⬅ Back to Experiments</a>
+<hr>
+
+<h2>Experiment {{ exp_id }}</h2>
+
+<h3>Aim</h3>
+<p>{{ aim }}</p>
+
+<h3>Algorithm</h3>
+<pre>{{ algorithm }}</pre>
+
+<h3>C Program</h3>
+<textarea rows="15" cols="80" readonly>{{ code }}</textarea>
+
+<hr>
+
+<h3>Input</h3>
+<form method="POST" action="/run">
+    <input type="hidden" name="exp_id" value="{{ exp_id }}">
+
+    <textarea name="input_data" rows="5" cols="60"
+        placeholder="Enter input values only (no text)"></textarea>
+    <br><br>
+
+    <button type="submit">▶ Compile & Run</button>
+</form>
+
+<hr>
+
+{% if output %}
+<h3>Output</h3>
+<pre>{{ output }}</pre>
+{% endif %}
+</div>
+</body>
+</html>
