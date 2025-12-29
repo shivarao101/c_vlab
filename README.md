@@ -25,5 +25,5 @@ This project is a Flask-based virtual laboratory for executing C programs online
 
 ## Author
 Prof. Shivaprasad  
-Department of Electronics & Communication
+Department of Electronics & Communication\
 Vivekananda College of Engineering and Technology, Puttur
